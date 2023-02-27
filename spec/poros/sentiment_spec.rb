@@ -2,11 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Sentiment do
   before(:each) do
-    info = { score: 0.455, 
+    data = { score: 0.455, 
              text: "I hope you get what you deserve", 
-             sent_rating: "WEAK_POSITIVE",
-             url: "https://i.redd.it/i40fzi5k8rka1.jpg" }
-    @sentiment = Sentiment.new(info)
+             sentiment: "WEAK_POSITIVE" }
+    image = { memes: [
+              url: "https://i.redd.it/i40fzi5k8rka1.jpg" 
+              ] 
+            }
+    @sentiment = Sentiment.new(data, image)
   end
 
   it 'exists' do

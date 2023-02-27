@@ -4,9 +4,10 @@ class Sentiment
               :sent_rating,
               :url
 
-  def initialize(info)
-    @score = info[:score]
-    @text = info[:text]
-    @sent_rating = info[:sentiment]
+  def initialize(data, image)
+    @score = data[:score]
+    @text = data[:text]
+    @sent_rating = data[:sentiment]
+    @url = image[:memes][0][:url]
   end
 end
