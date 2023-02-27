@@ -1,8 +1,6 @@
 class SentimentService 
   def self.get_sentiment_score(quote)
-    
-    response = conn.get("/v1/sentiment?text=#{quote}") 
-    
+    response = conn.get("/v1/sentiment?text=#{quote}")  
     JSON.parse(response.body, symbolize_names: true)
   end
 
