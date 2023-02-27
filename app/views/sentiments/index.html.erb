@@ -1,0 +1,6 @@
+<h3>Write your sentiment here:</h3>
+<%= form_with url: "/sentiments", method: :post, local: true do |form| %>
+  <%= form.text_field :sentiment %>
+  <%= form.label "Sentiment" %>
+  <%= form.submit "Submit" %>
+  <% end %>
