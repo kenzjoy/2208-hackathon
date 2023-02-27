@@ -12,7 +12,6 @@ RSpec.describe SentimentService do
     expect(response).to have_key(:text)
     expect(response[:text]).to eq("I hope you get what you deserve")
     expect(response).to have_key(:sentiment)
-    # require 'pry'; binding.pry
     expect(response[:sentiment]).to eq("WEAK_POSITIVE")
   end
 end

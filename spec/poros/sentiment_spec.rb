@@ -19,7 +19,6 @@ RSpec.describe Sentiment do
   it 'has attributes' do
     expect(@sentiment.score).to eq(0.455)
     expect(@sentiment.text).to eq("I hope you get what you deserve")
-    # require 'pry'; binding.pry
     expect(@sentiment.sent_rating).to eq("WEAK_POSITIVE")
     expect(@sentiment.url).to eq("https://i.redd.it/i40fzi5k8rka1.jpg")
   end
