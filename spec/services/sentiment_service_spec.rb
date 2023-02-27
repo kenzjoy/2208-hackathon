@@ -13,6 +13,5 @@ RSpec.describe SentimentService do
     expect(response[:text]).to eq("I hope you get what you deserve")
     expect(response).to have_key(:sentiment)
     expect(response[:sentiment]).to eq("WEAK_POSITIVE")
-    
   end
 end
