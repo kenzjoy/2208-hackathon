@@ -1,6 +1,21 @@
 <h3>Write your sentiment here:</h3>
-<%= form_with url: "/sentiments", method: :post, local: true do |form| %>
-  <%= form.text_field :sentiment %>
-  <%= form.label "Sentiment" %>
-  <%= form.submit "Submit" %>
+  <%= form_with url: "/sentiments", method: :post, local: true do |form| %>
+    <%= form.text_field :sentiment %>
+    <%= form.label "Sentiment" %>
+    <%= form.submit "Submit" %>
   <% end %>
+<% if @memefacade.text != nil %>
+  <ul>
+    <li> Sentiment: <%= @memefacade.text %> </li>
+    <li> Sentiment Score: <%= @memefacade.score %> </li>
+    <li> Sentiment Rating: <%= @memefacade.sent_rating %> </li>
+    <% if @memefacade.text != nil %>
+      <li> Meme for Posterity: <div> <img src="<%= @memefacade.url %>", width="500", height="700"> </div> </li>
+    <% end%>
+  </ul>
+<% end %>
+
+<% if flash[:user_input].present? %>
+  <% message = flash[:user_input] %>
+  <% flash.delete(:user_input) %>
+<% end %>
